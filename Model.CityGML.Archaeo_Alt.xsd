@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema 
+	targetNamespace="http://archaeo_alternative_revised/Model/CityGML/Archaeo_Alt" 
+	xmlns="http://archaeo_alternative_revised/Model/CityGML/Archaeo_Alt" 
+	xmlns:archaeo_Alt="http://archaeo_alternative_revised/Model/CityGML/Archaeo_Alt" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:text="http://archaeo_alternative_revised/Model/ISO_TC211/ISO_19103_All/ISO_19103:2005_Conceptual_schema_language/Basic_Types/Primitive/Text" 
+	xmlns:numerics="http://archaeo_alternative_revised/Model/ISO_TC211/ISO_19103_All/ISO_19103:2005_Conceptual_schema_language/Basic_Types/Primitive/Numerics" 
+	xmlns:date_and_Time="http://archaeo_alternative_revised/Model/ISO_TC211/ISO_19103_All/ISO_19103:2005_Conceptual_schema_language/Basic_Types/Primitive/Date_and_Time" 
+	xmlns:building="http://archaeo_alternative_revised/Model/CityGML/Building">
+	<xs:import namespace="http://archaeo_alternative_revised/Model/ISO_TC211/ISO_19103_All/ISO_19103:2005_Conceptual_schema_language/Basic_Types/Primitive/Text" schemaLocation="Model.ISO_TC211.ISO_19103_All.ISO_19103:2005_Conceptual_schema_language.Basic_Types.Primitive.Text.xsd"/>
+	<xs:import namespace="http://archaeo_alternative_revised/Model/ISO_TC211/ISO_19103_All/ISO_19103:2005_Conceptual_schema_language/Basic_Types/Primitive/Numerics" schemaLocation="Model.ISO_TC211.ISO_19103_All.ISO_19103:2005_Conceptual_schema_language.Basic_Types.Primitive.Numerics.xsd"/>
+	<xs:import namespace="http://archaeo_alternative_revised/Model/ISO_TC211/ISO_19103_All/ISO_19103:2005_Conceptual_schema_language/Basic_Types/Primitive/Date_and_Time" schemaLocation="Model.ISO_TC211.ISO_19103_All.ISO_19103:2005_Conceptual_schema_language.Basic_Types.Primitive.Date_and_Time.xsd"/>
+	<xs:import namespace="http://archaeo_alternative_revised/Model/CityGML/Building" schemaLocation="Model.CityGML.Building.xsd"/>
+	<xs:complexType name="Monument">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				Monument
+				
+				-- Definition --
+				The cultural buildings that date back in pre-historical, ancient, byzantine or post-byzantine time up to 1830.   
+				
+				-- Description --
+				Monument
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="building:Building">
+				<xs:all>
+					<xs:element name="type" type="archaeo_Alt:Type" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="designation" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="elevation" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="historicalName" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="historicalPeriod" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="id_listedMonuments" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="legalFoundationDate" type="date_and_Time:Date" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="location" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="name" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="responsibleAgency" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="preservationStatus" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="vulnerability" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AncientTheatre">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				AncientTheatre
+				
+				-- Definition --
+				A theatrical culture that flourished in ancient Greece from 700 BC   
+				
+				-- Description --
+				AncientTheatre
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="archaeo_Alt:Monument">
+				<xs:all>
+					<xs:element name="analemmata" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="antirides" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="capacity" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="distanceBetweenCaveaScanaeFrons" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="evripos" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="imaCavea" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="mediaCavea" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="summaCavea" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="numberEntrancesForActors" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="numberOfVomitoria" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="parodoi" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="portico" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="hasOrchestra" type="archaeo_Alt:Orchestra" minOccurs="1" maxOccurs="1">
+					</xs:element>
+					<xs:element name="hasPortico" type="archaeo_Alt:Portico" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="hasScaenae" type="archaeo_Alt:Scaenae" minOccurs="1" maxOccurs="1">
+					</xs:element>
+					<xs:element name="hasCavea" type="archaeo_Alt:Cavea" minOccurs="1" maxOccurs="1">
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Orchestra">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				Orchestra
+				
+				-- Definition --
+				The circular or semi-circular space where the chorus performed.
+				-- Description --
+				Orchestra
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="building:BuildingPart">
+				<xs:all>
+					<xs:element name="diameter" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="thymele" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Type">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				Type
+				
+				-- Definition --
+				The type  of the monument according to the National Archaeological Law
+				
+				-- Description --
+				Type
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="ancient" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="modernAfter100years" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="modernWithin100years" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Ownership">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				Ownership
+				
+				-- Definition --
+				Ownership   
+				
+				-- Description --
+				Ownership
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="localAuthority" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="npdd" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="npid" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="private" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="public" type="xs:string" minOccurs="0" maxOccurs="1">
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Portico">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				Portico
+				
+				-- Definition --
+				A gallery at the theatre   
+				
+				-- Description --
+				Portico
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="building:BuildingPart">
+				<xs:all>
+					<xs:element name="numberOfColumns" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="porticoDiameter" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="porticoHeight" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ImaCavea">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				ImaCavea
+				
+				-- Definition --
+				The lower cavea      
+				
+				-- Description --
+				ImaCavea
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="numberOfKerkides_ima" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="numberOfSeatRows_ima" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="MediaCavea">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				MediaCavea
+				
+				-- Definition --
+				The medium cavea      
+				
+				-- Description --
+				MediaCavea
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="numberOfSeatRows_media" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="numberOfKerkides_media" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="SummaCavea">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				SummaCavea
+				
+				-- Definition --
+				The upper cavea   
+				
+				-- Description --
+				SummaCavea
+			</xs:documentation>
+		</xs:annotation>
+		<xs:all>
+			<xs:element name="numberOfSeatRows_summa" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+			</xs:element>
+			<xs:element name="numberOfKerkides_summa" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="Cavea">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				Cavea
+				
+				-- Definition --
+				The section of the theatre where the public was seated.   
+				
+				-- Description --
+				Cavea
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="building:BuildingPart">
+				<xs:all>
+					<xs:element name="caveaDiameter" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="caveaHeight" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="construction" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="numberOfSectors" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="prohedria" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="seatHeight" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="seatWidth" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="totalNumberOfSeatRows" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="hasSummaCavea" type="archaeo_Alt:SummaCavea" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="hasMediaCavea" type="archaeo_Alt:MediaCavea" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="hasImaCavea" type="archaeo_Alt:ImaCavea" minOccurs="1" maxOccurs="1">
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Scaenae">
+		<xs:annotation>
+			<xs:documentation>
+				-- Name --
+				Scaenae
+				
+				-- Definition --
+				The structure at the back of the orchestra  where the actors acted.
+				
+				-- Description --
+				Scaenae
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="building:BuildingPart">
+				<xs:all>
+					<xs:element name="diameterScaenaeFronsColumns" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="heightScaenaeFronsColumns" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="logeion" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="numberColumnsScaenaeFrons" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="numberStoreysScaenaeFrons" type="numerics:Integer" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="paraskenia" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="postScaeniumWidth" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="proskenion" type="text:CharacterString" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="scaenaeFronsLenth" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="scaenaeHeight" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="scaenaeLength" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+					<xs:element name="scaenaeWidth" type="numerics:Decimal" minOccurs="0" maxOccurs="1">
+					</xs:element>
+				</xs:all>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Class1">
+	</xs:complexType>
+</xs:schema>
